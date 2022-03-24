@@ -1,0 +1,56 @@
+.active {
+
+}
+
+.not-active {
+
+}
+
+.pokemon {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c484caf9-ac5a-445d-abef-36be58f2d05b/dd7skgv-dd66933a-5f9f-4152-9f9a-97ee092a6e5f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M0ODRjYWY5LWFjNWEtNDQ1ZC1hYmVmLTM2YmU1OGYyZDA1YlwvZGQ3c2tndi1kZDY2OTMzYS01ZjlmLTQxNTItOWY5YS05N2VlMDkyYTZlNWYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.f7hgVsux63kxhDGpW25-7Yv3lBefgSTP4WG2stdbTmg");
+}
+
+.card {
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    border: solid darkcyan 4px;
+    font-weight: bold;
+    transform: rotate(5deg) scale(1.20);
+
+}
+
+.card:hover .card-footer {
+    transform: scale(1.005);
+    transition: all 0.2s ease-in-out;
+
+}
+
+.card:hover img {
+    height: 11rem;
+}
+
+button:hover {
+    border: solid darkcyan 1px;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.20);
+}
+
+.logo {
+    background-image: url("http://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-black-transparent-1600.png");
+}
+
+.button-2:hover {
+    border: solid white 2px;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.20);
+}
+
+input:hover{
+    border: solid black 2px;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.10);
+}
+
+

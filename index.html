@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pokemon api</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="header w-full h-36 bg-[#009688] mb-10 grid grid-cols-2">
+        <div class="">
+            <a href="index.html" class="">
+                <img src="http://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-black-transparent-1600.png" class="h-36" >
+            </a>
+        </div>
+
+        <div class="flex h-full items-center hidden md:block">
+            <input id="search"  type="text" class="px-6 py-3 rounded-3xl font-bold border mr-2 my-10" placeholder="pokemon id or name">
+            <button class="px-6 py-3 rounded-3xl font-bold border text-white button-2" onclick="searchPokemon()">Search</button>
+        </div>
+
+        <div class="flex h-full items-center block md:hidden">
+            <button id="open-search" class="px-6 py-3 rounded-3xl font-bold border mx-2 text-white button-2">open search</button>
+        </div>
+
+    </div>
+
+    <div id="mobile-search" class="hidden md:hidden bg-[rgba(0, 150, 136, 0.63)] pl-5">
+        <input id="search-mobile" type="text" class="search px-8 py-4 rounded-3xl font-bold border mx-2 h-12 my-2" placeholder="pokemon id or name">
+        <button class="px-8 py-4 rounded-3xl font-bold border mx-2 my-2" onclick="searchPokemon()">Search</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-none md:px-10 lg:px-20" id="maincontent"></div>
+
+    <div class="opacity-100" id="resultsDiv"></div>
+
+    <div class="prvnext flex justify-center space-around mb-6 opacity-100 mt-10">
+        <button class="px-6 py-3 rounded-3xl font-bold border mx-2" onclick="replaceCollectionURL_prev()" id="Prev">Previous</button>
+        <button class="px-6 py-3 rounded-3xl font-bold border mx-2" onclick="replaceCollectionURL_next()" id="Next">Next</button>
+        <p id="pageNum" class="px-6 py-3 font-bold mx-2">Page: 1/45</p>
+    </div>
+
+    <div class="bg-[#009688] h-24 w-full">
+        <p></p>
+    </div>
+
+    <div class="w3-container opacity-100">
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+
+                <header class="w3-container w3-teal">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h2 class="font-bold text-2xl md:text-3xl lg:text-4xl p-2" id="pokemon-name"></h2>
+                </header>
+
+                <div class="w3-container" id="modal-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 mt-5 mb-10 mx-5">
+                        <div id="modal-img"></div>
+
+                        <div id="modal-info" class="bg-gray-100 shadow-lg rounded-3xl p-5">
+                            <p class="font-bold">Properties:</p>
+                            <div id="modal-info-entrys"></div>
+                        </div>
+
+                        <div class="bg-gray-100 shadow-lg rounded-3xl p-5 ml-0 md:mr-5 mt-5">
+                            <p class="font-bold">Moves:</p>
+                            <div id="modal-moves"></div>
+                        </div>
+
+                        <div class="bg-gray-100 shadow-lg rounded-3xl p-5 ml-0  mt-5">
+                            <p class="font-bold">Stats:</p>
+                            <div id="modal-stats"></div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="prvnext flex justify-center space-around mb-6">
+                        <button class="px-6 py-3 rounded-3xl font-bold border mx-2" onclick="prevSinglePokemon()" id="Prev-2">Previous</button>
+                        <button class="px-6 py-3 rounded-3xl font-bold border mx-2"  onclick="nxtSinglePokemon()" id="Next-2">Next</button>
+                    </div>
+                </div>
+
+                <footer class="w3-container w3-teal">
+                    <p>Made by dk</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+<script>
+    document.getElementById("open-search").addEventListener("click", function () {
+        if (document.getElementById("mobile-search").classList.contains("hidden")) {
+            document.getElementById("mobile-search").classList.remove("hidden")
+            document.getElementById("mobile-search").classList.add("block")
+        } else {
+            document.getElementById("mobile-search").classList.add("hidden")
+            document.getElementById("mobile-search").classList.remove("block")
+        }
+    })
+
+</script>
+</html>
