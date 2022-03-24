@@ -28,7 +28,7 @@ function writePokeDetails(pokemon) {
     document.getElementById('pokemon-name').innerHTML='#' + pokemon.id + ' ' + pokemon.name
     document.getElementById('modal-img').innerHTML=
         `
-            <img class="h-[10rem]" alt="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon.id}.gif" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon.id}.gif">
+            <img class="h-[10rem]" alt="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemon.id}.gif">
         `
     document.getElementById('modal-info-entrys').innerHTML=
         `
@@ -46,8 +46,12 @@ function writePokeDetails(pokemon) {
         `
     document.getElementById('modal-stats').innerHTML=
         `
-            <p><strong>${pokemon.stats[0].stat.name}:</strong> <span class="text-red-500 font-bold">${pokemon.stats[0].base_stat}</span></p>
-            <p><strong>${pokemon.stats[1].stat.name}:</strong> <span class="text-red-500 font-bold">-${pokemon.stats[1].base_stat}</span></p>
+            <p><strong>${pokemon.stats[0].stat.name}:</strong> <span>${pokemon.stats[0].base_stat}</span></p>
+            <p><strong>${pokemon.stats[1].stat.name}:</strong> <span>-${pokemon.stats[1].base_stat}</span></p>
+            <p><strong>${pokemon.stats[2].stat.name}:</strong> <span>${pokemon.stats[2].base_stat}</span></p>
+            <p><strong>${pokemon.stats[3].stat.name}:</strong> <span>-${pokemon.stats[3].base_stat}</span></p>
+            <p><strong>${pokemon.stats[4].stat.name}:</strong> <span>${pokemon.stats[4].base_stat}</span></p>
+            <p><strong>${pokemon.stats[5].stat.name}:</strong> <span>${pokemon.stats[5].base_stat}</span></p>
         `
     if (currentPokemon) {
         document.getElementById('id01').style.display='block'
@@ -124,6 +128,7 @@ function updatePageNum() {
 //loops tru current collection and makes an individual card for all of them
 function addPokemon( respons ) {
     collection = respons
+    console.log(collection)
     let pokeData = collection.results
     document.getElementById('maincontent').innerHTML=""
     pokeData.forEach( item => {
